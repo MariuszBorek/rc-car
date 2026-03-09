@@ -1,0 +1,22 @@
+[Unit]
+Description=Raspberry Pi Racing Controller
+Requires=pigpiod.service
+After=pigpiod.service network.target
+
+[Service]
+
+User=pi
+WorkingDirectory=/home/pi/racing
+
+ExecStart=/usr/bin/python3 /home/pi/racing/controller.py
+
+Environment=SDL_VIDEODRIVER=dummy
+
+Restart=always
+RestartSec=3
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
