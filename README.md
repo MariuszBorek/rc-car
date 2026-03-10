@@ -3,7 +3,7 @@
 ### 0. Connect module to Raspberry Pi 4:
 <br>
 
-![rc_car_diagram_idc.svg](scheme/rc_car_diagram_idc.svg)
+![rc_car_diagram_idc_socket.svg](scheme/rc_car_diagram_idc_socket.svg)
 
 ### 1. File rc_car_code.py save in:<br>
 `/home/pi/racing/controller.py`
