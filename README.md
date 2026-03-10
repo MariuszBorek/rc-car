@@ -1,5 +1,10 @@
 # RC Car on Raspberry Pi 4
 
+### 0. Connect module to Raspberry Pi 4:
+<br>
+
+![rc_car_diagram_idc.svg](scheme/rc_car_diagram_idc.svg)
+
 ### 1. File rc_car_code.py save in:<br>
 `/home/pi/racing/controller.py`
 <br><br>
@@ -9,7 +14,7 @@
 <br><br>
 
 ### 3. activate service:
-```
+```shell
 sudo systemctl daemon-reload
 
 sudo systemctl enable pigpiod
@@ -20,4 +25,22 @@ sudo systemctl start racing-controller
 <br>
 
 ### 4. Logs:<br><br>
-`journalctl -u racing-controller -f`
+```shell
+journalctl -u racing-controller -f
+```
+
+
+## systemd commands:
+
+```shell
+systemctl status racing-controller
+
+sudo systemctl daemon-reload
+
+sudo systemctl start racing-controller
+sudo systemctl stop racing-controller
+sudo systemctl restart racing-controller
+
+sudo systemctl disable racing-controller
+
+```

@@ -1,0 +1,25 @@
+[Unit]
+Description=Raspberry Pi Racing Controller
+Requires=pigpiod.service
+After=pigpiod.service network.target
+
+[Service]
+
+User=mariuszpi
+WorkingDirectory=/home/mariuszpi/racing
+
+ExecStart=/usr/bin/python3 /home/mariuszpi/racing/rc_car_code.py
+
+Environment=SDL_VIDEODRIVER=dummy
+
+Restart=always
+RestartSec=3
+
+Environment=PYTHONIOENCODING=utf-8
+Environment=LANG=C.UTF-8
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
