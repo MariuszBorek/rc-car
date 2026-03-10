@@ -94,19 +94,19 @@
         <mxCell id="B5qrAQ9-rnJE60-NpVhx-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#FF0000);" value="" vertex="1">
           <mxGeometry height="10" width="10" x="433.87" y="816.4949363956435" as="geometry" />
         </mxCell>
-        <mxCell id="B5qrAQ9-rnJE60-NpVhx-31" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;connectable=0;" value="Zasilanie Mostek H" vertex="1">
+        <mxCell id="B5qrAQ9-rnJE60-NpVhx-31" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;connectable=0;fontColor=light-dark(#000000,#808080);" value="Zasilanie Mostek H" vertex="1">
           <mxGeometry height="30" width="160" x="503.87" y="726.4949363956435" as="geometry" />
         </mxCell>
-        <mxCell id="B5qrAQ9-rnJE60-NpVhx-32" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;connectable=0;" value="Zasilanie Servo" vertex="1">
+        <mxCell id="B5qrAQ9-rnJE60-NpVhx-32" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;connectable=0;fontColor=light-dark(#000000,#808080);" value="Zasilanie Servo" vertex="1">
           <mxGeometry height="30" width="170" x="503.87" y="766.4949363956435" as="geometry" />
         </mxCell>
-        <mxCell id="B5qrAQ9-rnJE60-NpVhx-33" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;connectable=0;" value="Zasilanie Silnik" vertex="1">
+        <mxCell id="B5qrAQ9-rnJE60-NpVhx-33" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;connectable=0;fontColor=light-dark(#000000,#808080);" value="Zasilanie Silnik" vertex="1">
           <mxGeometry height="30" width="200" x="503.87" y="806.4949363956435" as="geometry" />
         </mxCell>
-        <mxCell id="B5qrAQ9-rnJE60-NpVhx-34" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;connectable=0;" value="Gniazdo Silnik" vertex="1">
+        <mxCell id="B5qrAQ9-rnJE60-NpVhx-34" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;connectable=0;fontColor=light-dark(#000000,#808080);" value="Gniazdo Silnik" vertex="1">
           <mxGeometry height="30" width="170" x="503.87" y="686.4949363956435" as="geometry" />
         </mxCell>
-        <mxCell id="B5qrAQ9-rnJE60-NpVhx-35" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;connectable=0;" value="Gniazdo Servo" vertex="1">
+        <mxCell id="B5qrAQ9-rnJE60-NpVhx-35" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;connectable=0;fontColor=light-dark(#000000,#808080);" value="Gniazdo Servo" vertex="1">
           <mxGeometry height="30" width="120" x="503.87" y="651.4949363956435" as="geometry" />
         </mxCell>
         <mxCell id="B5qrAQ9-rnJE60-NpVhx-43" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;rotation=-90;connectable=0;" value="VCC" vertex="1">
@@ -506,10 +506,10 @@
             <mxPoint x="420" y="715" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="sQivlsN8I1r_D4hucIip-2" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="IDC socket" vertex="1">
+        <mxCell id="sQivlsN8I1r_D4hucIip-2" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontColor=light-dark(#000000,#808080);" value="IDC socket" vertex="1">
           <mxGeometry height="30" width="80" x="111" y="415" as="geometry" />
         </mxCell>
-        <mxCell id="sQivlsN8I1r_D4hucIip-3" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="Pin socket" vertex="1">
+        <mxCell id="sQivlsN8I1r_D4hucIip-3" parent="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontColor=light-dark(#000000,#808080);" value="Pin socket" vertex="1">
           <mxGeometry height="30" width="80" x="631" y="418" as="geometry" />
         </mxCell>
       </root>
