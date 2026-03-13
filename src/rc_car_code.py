@@ -11,6 +11,8 @@ FAILSAFE_TIMEOUT = 0.3
 STEERING_EXPO = 0.4
 STEERING_SMOOTHING = 0.3
 
+STEERING_REVERSED = True
+
 # ==================================================
 # ================ RACING CONTROLLER ===============
 # ==================================================
@@ -138,6 +140,9 @@ class RacingController:
 
         self.current_steering += (value - self.current_steering) * STEERING_SMOOTHING
         value = self.current_steering
+
+        if STEERING_REVERSED:
+            value = -value
 
         pulse = self.SERVO_CENTER + value * (self.SERVO_MAX - self.SERVO_CENTER)
         pulse = max(self.SERVO_MIN, min(self.SERVO_MAX, pulse))
