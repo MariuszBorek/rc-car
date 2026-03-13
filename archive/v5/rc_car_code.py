@@ -1,8 +1,7 @@
-# v 6.0.0
+# v 5.0.0
 import pigpio
 import pygame
 import time
-import os
 
 # ==================================================
 # =================== CONSTANTS ====================
@@ -13,9 +12,6 @@ STEERING_EXPO = 0.4
 STEERING_SMOOTHING = 0.3
 
 STEERING_REVERSED = True
-
-SHUTDOWN_BUTTON = 7
-SHUTDOWN_HOLD_TIME = 2.0
 
 # ==================================================
 # ================ RACING CONTROLLER ===============
@@ -30,6 +26,8 @@ class RacingController:
         if not self.pi.connected:
             raise RuntimeError("Brak połączenia z pigpio")
 
+        # ---------- PINS ----------
+
         self.PWMA = 18
         self.AIN1 = 23
         self.AIN2 = 24
@@ -42,19 +40,27 @@ class RacingController:
 
         self.SERVO_PIN = 12
 
+        # ---------- SERVO ----------
+
         self.SERVO_CENTER = 1500
         self.SERVO_MIN = 1000
         self.SERVO_MAX = 2000
         self.SERVO_DEADZONE = 0.08
 
+        # ---------- PWM ----------
+
         self.PWM_FREQ = 20000
         self.PWM_RANGE = 1000
+
+        # ---------- STATE ----------
 
         self.current_power = 0
         self.current_steering = 0
 
         self._setup_pins()
         self._setup_pwm()
+
+    # ==================================================
 
     def _setup_pins(self):
 
@@ -66,6 +72,8 @@ class RacingController:
 
         for p in pins:
             self.pi.set_mode(p, pigpio.OUTPUT)
+
+    # ==================================================
 
     def _setup_pwm(self):
 
@@ -82,7 +90,9 @@ class RacingController:
 
         self.pi.set_servo_pulsewidth(self.SERVO_PIN, self.SERVO_CENTER)
 
-    # ================= THROTTLE =================
+    # ==================================================
+    # ==================== THROTTLE ====================
+    # ==================================================
 
     def set_throttle(self, value):
 
@@ -119,7 +129,9 @@ class RacingController:
 
         self.pi.write(self.STBY, 1)
 
-    # ================= STEERING =================
+    # ==================================================
+    # ==================== STEERING ====================
+    # ==================================================
 
     def set_steering(self, value):
 
@@ -137,7 +149,7 @@ class RacingController:
 
         self.pi.set_servo_pulsewidth(self.SERVO_PIN, pulse)
 
-    # ================= STOP =================
+    # ==================================================
 
     def stop(self):
 
@@ -152,7 +164,7 @@ class RacingController:
 
         self.pi.write(self.STBY, 0)
 
-    # ================= SHUTDOWN =================
+    # ==================================================
 
     def shutdown(self):
 
@@ -163,12 +175,14 @@ class RacingController:
         self.pi.stop()
 
 # ==================================================
-# ================= UTILITIES ======================
+# ==================== UTILITIES ===================
 # ==================================================
 
 def apply_expo(value, expo):
 
     return (1 - expo) * value + expo * (value ** 3)
+
+# ==================================================
 
 def wait_for_controller():
 
@@ -216,7 +230,6 @@ def main():
     joy = wait_for_controller()
 
     last_input_time = time.time()
-    shutdown_press_time = None
 
     print("RT = gaz | LT = cofanie | LX = skret | B = hamulec")
 
@@ -227,18 +240,6 @@ def main():
             try:
 
                 for event in pygame.event.get():
-
-                    if event.type == pygame.JOYBUTTONDOWN:
-
-                        if event.button == SHUTDOWN_BUTTON:
-                            shutdown_press_time = time.time()
-                            print("Przytrzymaj 2s aby wylaczyc Raspberry Pi")
-
-                    if event.type == pygame.JOYBUTTONUP:
-
-                        if event.button == SHUTDOWN_BUTTON:
-                            shutdown_press_time = None
-                            print("Shutdown anulowany")
 
                     if event.type == pygame.JOYDEVICEREMOVED:
 
@@ -252,20 +253,6 @@ def main():
 
                         continue
 
-                # ===== SHUTDOWN HOLD CHECK =====
-
-                if shutdown_press_time is not None:
-
-                    if time.time() - shutdown_press_time > SHUTDOWN_HOLD_TIME:
-
-                        print("Shutdown Raspberry Pi...")
-
-                        rc.shutdown()
-                        pygame.quit()
-
-                        os.system("sudo shutdown -h now")
-
-                        return
 
                 lt = (joy.get_axis(2) + 1) / 2
                 rt = (joy.get_axis(5) + 1) / 2
