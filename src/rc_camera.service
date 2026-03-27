@@ -1,0 +1,18 @@
+[Unit]
+Description=Raspberry Pi Camera Stream
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/bin/python3 /home/mariuszpi/racing/rc_camera.py
+WorkingDirectory=/home/mariuszpi/racing
+Restart=always
+User=mariuszpi
+
+# opcjonalnie: logi do journala
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
